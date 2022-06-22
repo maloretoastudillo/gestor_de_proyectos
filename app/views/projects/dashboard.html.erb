@@ -1,0 +1,37 @@
+<h2 class="mt-3 txt">Proyectos</h2>
+
+<form class="form-inline justify-content-end mr-5 mb-2">
+    <select class="custom-select" name="valor">
+        <option selected>Selecciona un estado</option>
+        <option value="0">propuesta</option>
+        <option value="1">en_progreso</option>
+        <option value="2">terminado</option>
+        <option value="3">todos</option>
+    </select>
+    <button class="btn btn-outline-success my-2" type="submit">Buscar</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr class="h5">
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Fecha inicio</th>
+      <th scope="col">Fecha término</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+    <tr>
+      <th scope="row"><%= project.id %></th>
+      <td><%= project.name %></td>
+      <td><%= project.description %></td>
+      <td><%= project.start_date %></td>
+      <td><%= project.end_date %></td>
+      <td><%= project.state %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
